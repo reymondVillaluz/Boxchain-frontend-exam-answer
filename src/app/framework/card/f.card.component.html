@@ -1,0 +1,13 @@
+<div class="card-container">
+    <div *ngFor="let r of rows" class="card-data-container shadow-sm bg-light border border-light rounded" style="margin:10px;">
+        <div class="card-data">
+            <div *ngFor="let ucon of usercon.columndFields">
+                <div style ="margin-bottom:10px;">
+                     {{ucon.columnDisplayName}}
+                     :
+                     {{r[ucon.columnName]}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
