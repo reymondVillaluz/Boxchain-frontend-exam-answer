@@ -1,4 +1,4 @@
-{
+[{
     "name": "mainview",
     "menu": [
         {
@@ -10,4 +10,4 @@
         }
     ],
     "content": "<div>Sample content</div>"
-}
+}]

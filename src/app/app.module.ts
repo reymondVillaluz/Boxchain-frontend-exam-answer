@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ProductModule  } from './pages/product/product.module';
 import { UserModule } from './pages/user/user.module';
 import { HomeModule } from './pages/home/home.module';
+import { AppService } from './app.service';
 
 import {appRouting} from './app.routes';
 
@@ -24,7 +25,7 @@ import {appRouting} from './app.routes';
     HomeModule,
     appRouting
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

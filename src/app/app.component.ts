@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,28 +9,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-
+   title = 'app';
    mainview: any;
-
-    constructor(){
-        this.mainview = {
-            "name": "mainview",
-            "menu": [
-                {
-                    "name": "users",
-                    "displayName": "Users"
-                }, {
-                    "name": "products",
-                    "displayName": "Products"
-                }
-            ],
-            "content": "<div>Sample content</div>"
-        }
-
+    constructor(private appSrv: AppService) {
+        this.appSrv.getMainView().subscribe(data => {
+            this.mainview = data;
+        });
     }
 
     ngOninit() {
-        
+    }
+
+    ngAfterViewInit(){
+        this.appSrv.getMainView().subscribe(data => {
+            this.mainview = data;
+        });
     }
 }

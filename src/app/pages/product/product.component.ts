@@ -16,12 +16,13 @@ export  class ProductComponent {
     productConfig: any;
 
     constructor(private productSrv: ProductService) {
-       
+    //    this.productSrv.getProductConfig().subscribe(data => {
+    //          this.productConfig = data;
+    //     })
     }
 
 
     ngOnInit(){
-
         this.productConfig = this.productSrv.getProductConfig();
         this.productConfig.columndFields.forEach(d => {
             this.columns.push({
@@ -35,4 +36,5 @@ export  class ProductComponent {
             this.rows = data
         });
     }
+
 }
